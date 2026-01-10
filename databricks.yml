@@ -37,20 +37,20 @@ resources:
               env: dev
           compute: serverless
 
-        # - task_key: evaluate_model
-        #   depends_on:
-        #     - task_key: train_model
-        #   notebook_task:
-        #     notebook_path: notebooks/03_evaluate_model.py
-        #     base_parameters:
-        #       env: dev
-        #   compute: serverless
+        - task_key: evaluate_model
+          depends_on:
+            - task_key: train_model
+          notebook_task:
+            notebook_path: notebooks/03_evaluate_model.py
+            base_parameters:
+              env: dev
+          compute: serverless
 
-        # - task_key: register_model
-        #   depends_on:
-        #     - task_key: evaluate_model
-        #   notebook_task:
-        #     notebook_path: notebooks/04_model_register.py
-        #     base_parameters:
-        #       env: dev
-        #   compute: serverless
+        - task_key: register_model
+          depends_on:
+            - task_key: evaluate_model
+          notebook_task:
+            notebook_path: notebooks/04_model_register.py
+            base_parameters:
+              env: dev
+          compute: serverless
