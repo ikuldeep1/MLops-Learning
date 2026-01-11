@@ -1,5 +1,5 @@
 # Databricks notebook source
-# notebooks/01_data_ingestion.py
+# notebooks/00_data_ingestion.py
 
 from pyspark.sql import functions as F
 from sklearn.model_selection import train_test_split
