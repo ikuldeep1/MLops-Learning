@@ -1,4 +1,5 @@
 # Databricks notebook source
+# notebooks/02_train_model.py
 import mlflow
 import mlflow.sklearn
 from sklearn.linear_model import LogisticRegression
@@ -32,7 +33,10 @@ y_val = val_pdf["Potability"]
 # ----------------------------
 # Train model
 # ----------------------------
-model = LogisticRegression(max_iter=200)
+model = LogisticRegression(
+    max_iter=500,
+    class_weight="balanced"
+)
 model.fit(X_train, y_train)
 
 # ----------------------------
